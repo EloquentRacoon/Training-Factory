@@ -15,10 +15,18 @@ class bezoekerController extends AbstractController
     /**
      * @Route("/homepage", name="bezoekerHomepage")
      */
-    public function newAction(Request $request)
+    public function homepageAction(Request $request)
     {
 
-        return $this->render("bezoeker/bezoekerHomepage.html.twig");
+        return $this->render("bezoeker/homepage.html.twig");
+    }
+
+    /**
+     * @Route("/contact", name="bezoekerContact")
+     */
+    public function contactAction()
+    {
+        return $this->render("bezoeker/contact.html.twig");
     }
 
 }

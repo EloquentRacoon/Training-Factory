@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block navContent %}
+    <li class="nav-item dRed">
+        <a class="nav-link dRed display-5" href="{{ path('bezoekerHomepage') }}">home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">trainings aanbod</a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">lid worden</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">gedragsregels</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link dRed display-5" href="{{ path('bezoekerContact') }}">locatie & contact</a>
+    </li>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
