@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f03da9e-b73b-49e1-9be5-a61019e326f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/customCss.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bezoeker/contact.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bezoeker/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Training-Factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Training-Factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/bezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/bezoekerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/customCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/customCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/bezoekerHomepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bezoeker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker.html.twig" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -143,6 +142,11 @@
   </component>
   <component name="ProjectId" id="1UprIHn5RzvCNMsTHxanVEp9PzR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
@@ -158,15 +162,15 @@
       <recent name="C:\xampp\htdocs\Training-Factory" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -181,6 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576064296508</updated>
       <workItem from="1576064297883" duration="18604000" />
+      <workItem from="1576617260544" duration="2882000" />
     </task>
     <servers />
   </component>
@@ -192,10 +197,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="976" y="542" key="com.intellij.ide.util.TipDialog" timestamp="1576617273986">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="976" y="542" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/-1360.387.1360.768@0.0.2560.1440" timestamp="1576617273986" />
   </component>
 </project>
