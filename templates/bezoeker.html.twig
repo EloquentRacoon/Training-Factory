@@ -1,20 +1,35 @@
 {% extends "base.html.twig" %}
 {% block navContent %}
     <li class="nav-item dRed">
-        <a class="nav-link dRed display-5" href="{{ path('bezoekerHomepage') }}">home</a>
+        <a class="nav-link dRed display-5" href="{{ path('app_bezoeker_homepage') }}">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">trainings aanbod</a>
+        <a class="nav-link dRed display-5" href=" {{ path('app_training_aanbod') }}">Trainings aanbod</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">lid worden</a>
+        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">Lid worden</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">gedragsregels</a>
+        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">Gedragsregels</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link dRed display-5" href="{{ path('bezoekerContact') }}">locatie & contact</a>
+        <a class="nav-link dRed display-5" href="{{ path('app_bezoeker_contact') }}">Locatie & Contact</a>
     </li>
+    {% if app.user %}
+        <li class="nav-item">
+            <a class="nav-link dRed display-5" href="{{ path('app_logout') }}">Logout</a>
+        </li>
+        <li>
+            {% if app.user %}
+                <p class="nav-link dRed display-6">(You are logged in as: {{ app.user.username }})</p>
+            {% endif %}
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link dRed display-5" href="{{ path('app_login') }}">login</a>
+        </li>
+    {% endif %}
+
 {% endblock %}
 
 {% block body %}

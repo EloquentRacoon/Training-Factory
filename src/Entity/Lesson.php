@@ -44,12 +44,12 @@ class Lesson
     private $training;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\registration", mappedBy="lesson")
+     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="lesson")
      */
     private $registration;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\person", inversedBy="lessons")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="lessons")
      */
     private $person;
 

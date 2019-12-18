@@ -39,7 +39,7 @@ class Training
     private $costs;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\lesson", mappedBy="training")
+     * @ORM\OneToMany(targetEntity="App\Entity\Lesson", mappedBy="training")
      */
     private $lesson;
 

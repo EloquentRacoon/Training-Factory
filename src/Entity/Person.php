@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PersonRepository")
  */
-class Person
+class Person implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -19,12 +18,18 @@ class Person
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $loginname;
+    private $username;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
 
@@ -49,7 +54,7 @@ class Person
     private $dateofbirth;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $gender;
 
@@ -83,47 +88,53 @@ class Person
      */
     private $place;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $role;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Lesson", mappedBy="person")
-     */
-    private $lessons;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="person")
-     */
-    private $registrations;
-
-    public function __construct()
-    {
-        $this->lessons = new ArrayCollection();
-        $this->registrations = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getLoginname(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->loginname;
+        return (string) $this->username;
     }
 
-    public function setLoginname(string $loginname): self
+    public function setUsername(string $username): self
     {
-        $this->loginname = $loginname;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        return $this->password;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
@@ -131,6 +142,23 @@ class Person
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getFirstname(): ?string
@@ -150,7 +178,7 @@ class Person
         return $this->preprovision;
     }
 
-    public function setPreprovision(string $preprovision): self
+    public function setPreprovision(?string $preprovision): self
     {
         $this->preprovision = $preprovision;
 
@@ -261,80 +289,6 @@ class Person
     public function setPlace(?string $place): self
     {
         $this->place = $place;
-
-        return $this;
-    }
-
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Lesson[]
-     */
-    public function getLessons(): Collection
-    {
-        return $this->lessons;
-    }
-
-    public function addLesson(Lesson $lesson): self
-    {
-        if (!$this->lessons->contains($lesson)) {
-            $this->lessons[] = $lesson;
-            $lesson->setPerson($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLesson(Lesson $lesson): self
-    {
-        if ($this->lessons->contains($lesson)) {
-            $this->lessons->removeElement($lesson);
-            // set the owning side to null (unless already changed)
-            if ($lesson->getPerson() === $this) {
-                $lesson->setPerson(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Registration[]
-     */
-    public function getRegistrations(): Collection
-    {
-        return $this->registrations;
-    }
-
-    public function addRegistration(Registration $registration): self
-    {
-        if (!$this->registrations->contains($registration)) {
-            $this->registrations[] = $registration;
-            $registration->setPerson($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRegistration(Registration $registration): self
-    {
-        if ($this->registrations->contains($registration)) {
-            $this->registrations->removeElement($registration);
-            // set the owning side to null (unless already changed)
-            if ($registration->getPerson() === $this) {
-                $registration->setPerson(null);
-            }
-        }
 
         return $this;
     }

@@ -27,7 +27,7 @@ class Registration
     private $lesson;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\person", inversedBy="registrations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="registrations")
      */
     private $person;
 
