@@ -94,13 +94,29 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
             return new RedirectResponse($targetPath);
         }
 
+        $user = $this->entityManager->getRepository(Person::class)->findOneBy(['username' => $request->request->get('username')]);
+//        dd($user);
+
+        if ($user->getRoles()[0] === "ROLE_MEMBER") {
+            return new RedirectResponse('/member');
+        }
+        elseif ($user->getRoles()[0] === "ROLE_INSTRUCTOR") {
+            return new RedirectResponse('/instructor');
+        }
+        elseif ($user->getRoles()[0] === "ROLE_ADMIN") {
+            return new RedirectResponse('/admin');
+        }
+
+
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
 //        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
-        return new RedirectResponse($this->urlGenerator->generate('app_bezoeker_homepage'));
+//        return new RedirectResponse($this->urlGenerator->generate('app_bezoeker_homepage'));
     }
 
     protected function getLoginUrl()
     {
         return $this->urlGenerator->generate('app_login');
     }
+
+
 }

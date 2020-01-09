@@ -4,13 +4,13 @@
         <a class="nav-link dRed display-5" href="{{ path('app_bezoeker_homepage') }}">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link dRed display-5" href=" {{ path('app_training_aanbod') }}">Trainings aanbod</a>
+        <a class="nav-link dRed display-5" href=" {{ path('app_bezoeker_training_aanbod') }}">Trainings aanbod</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">Lid worden</a>
+        <a class="nav-link dRed display-5" href=" {{ path('app_aanmelden') }}">Lid worden</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">Gedragsregels</a>
+        <a class="nav-link dRed display-5" href="{{ path('app_bezoeker_regels') }}">Gedragsregels</a>
     </li>
     <li class="nav-item">
         <a class="nav-link dRed display-5" href="{{ path('app_bezoeker_contact') }}">Locatie & Contact</a>
@@ -18,11 +18,6 @@
     {% if app.user %}
         <li class="nav-item">
             <a class="nav-link dRed display-5" href="{{ path('app_logout') }}">Logout</a>
-        </li>
-        <li>
-            {% if app.user %}
-                <p class="nav-link dRed display-6">(You are logged in as: {{ app.user.username }})</p>
-            {% endif %}
         </li>
     {% else %}
         <li class="nav-item">

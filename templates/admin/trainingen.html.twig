@@ -1,0 +1,28 @@
+{% extends "admin.html.twig" %}
+{% block content %}
+    <div class="m-2">
+        <h1 class="text-center">Trainingen</h1>
+        <table class="table m-5">
+            <thead>
+            <tr>
+                <th>Training</th>
+                <th>Descriptie</th>
+                <th>duratie <br> uur:minuten</th>
+                <th>kosten</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for training in trainingen %}
+                <tr>
+                    <th><a href="" class="text-dark"><u>{{ training.naam }}</u></a></th>
+                    <td>{{ training.desciption }}</td>
+                    <td>{{ training.duration|date("H:i") }}</td>
+                    <td>€ {{ training.costs }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

@@ -2,18 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f03da9e-b73b-49e1-9be5-a61019e326f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/bezoeker/trainingAanbod.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Training-Factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Training-Factory.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/homepage.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bezoeker/gedragsRegels.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/instructor.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/instructor/homepage.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/accessDenied.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/bezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/bezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Training.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Training.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PersonRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Person.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/adminHomepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bezoeker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/instructor/instructorHomepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/trainingen.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +155,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1UprIHn5RzvCNMsTHxanVEp9PzR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -159,13 +169,13 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Training-Factory\templates" />
-      <recent name="C:\xampp\htdocs\Training-Factory\public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Training-Factory\src" />
       <recent name="C:\xampp\htdocs\Training-Factory" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Training-Factory\templates" />
+      <recent name="C:\xampp\htdocs\Training-Factory\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,7 +202,9 @@
       <updated>1576064296508</updated>
       <workItem from="1576064297883" duration="18604000" />
       <workItem from="1576617260544" duration="2882000" />
-      <workItem from="1576673222531" duration="3867000" />
+      <workItem from="1576673222531" duration="4640000" />
+      <workItem from="1578307781682" duration="12780000" />
+      <workItem from="1578558661390" duration="17241000" />
     </task>
     <servers />
   </component>

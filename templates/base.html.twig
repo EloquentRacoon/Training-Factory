@@ -6,7 +6,7 @@
         {% block title %}Training-Factory{% endblock %}
     </title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('bootstrap-4.4.1-dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/customCss.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
     {% endblock %}
@@ -16,13 +16,22 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3">
-                <img class="d-lg-block d-none" src="img/training-factory.png" alt="PNG not found">
+                <img class="d-lg-block d-none" src="{{ asset('img/training-factory.png') }}" alt="PNG not found">
             </div>
             <div class="col-6">
                 <h1 class="booC mt-3 display-3">Training Factory<br>Den Haag </h1>
             </div>
-            <div class="col-3 float-right">
-                
+            <div class="col-3 mt-5 text-center">
+                {% if app.user %}
+                    <p class="dRed display-6">You are logged in as: {{ app.user.username }}</p>
+                    {% if is_granted('ROLE_MEMBER') %}
+                        - Member -
+                    {% elseif is_granted('ROLE_INSTRUCTOR') %}
+                        - Instructeur -
+                    {% elseif is_granted('ROLE_ADMIN') %}
+                        - Admin -
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
@@ -40,18 +49,18 @@
     <div class="container-fluid ">
         <div class="row justify-content-center">
             <div class="col-3">
-                <img class="img-fluid d-none d-md-block" src="img/training_1.jpg" alt="Image Not Found">
+                <img class="img-fluid d-none d-md-block" src="{{ asset('img/training_1.jpg') }}" alt="Image Not Found">
             </div>
             <div class="col-3">
-                <img class="img-fluid d-none d-md-block" src="img/training_2.jpg" alt="Image Not Found">
+                <img class="img-fluid d-none d-md-block" src="{{ asset('img/training_2.jpg') }}" alt="Image Not Found">
             </div>
             <div class="col-3">
-                <img class="img-fluid d-none d-md-block" src="img/training_3.jpg" alt="Image Not Found">
+                <img class="img-fluid d-none d-md-block" src="{{ asset('img/training_3.jpg') }}" alt="Image Not Found">
             </div>
         </div>
     </div>
 {% endblock %}
-<div class="container-fluid ">
+<div class="container-fluid">
     {% block body %}
     {% endblock %}
 </div>

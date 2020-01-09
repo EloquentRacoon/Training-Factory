@@ -33,13 +33,20 @@ class bezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/training-aanbod", name="app_training_aanbod")
+     * @Route("/gedragsregels", name="app_bezoeker_regels")
      */
-    public function trainingAanbodAction(TrainingRepository $trainingRepository, LessonRepository $lessonRepository){
+    public function regelsAction()
+    {
+        return $this->render("bezoeker/gedragsRegels.html.twig");
+    }
+
+    /**
+     * @Route("/training-aanbod", name="app_bezoeker_training_aanbod")
+     */
+    public function trainingAanbodAction(TrainingRepository $trainingRepository){
 
         return $this->render("bezoeker/trainingAanbod.html.twig",[
-            'trainingen' => $trainingRepository->findAll() ,
-            'lessons' => $lessonRepository->findAll() ,
+            'trainingen' => $trainingRepository->findAll()
         ]);
     }
 }
