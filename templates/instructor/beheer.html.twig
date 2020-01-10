@@ -29,7 +29,7 @@
                     <td>{{ lesson.maxPersons }}</td>
                     <td>{{ lesson.person.firstname }}</td>
                     <td>{{ lesson.training.costs }}</td>
-                    <td><a href="{{ path('app_instructor_lesson_delete' ,{id:lesson.id}) }}"><button class="btn btn-primary"></button></a></td>
+                    <td><a href="{{ path('app_instructor_lesson_delete' ,{id: lesson.id}) }}"><button class="btn btn-primary">Verwijderen</button></a></td>
                 </tr>
             {% endfor %}
             </tbody>
