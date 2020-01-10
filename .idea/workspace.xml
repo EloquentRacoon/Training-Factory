@@ -2,26 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f03da9e-b73b-49e1-9be5-a61019e326f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/homepage.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bezoeker/gedragsRegels.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/instructor.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/instructor/homepage.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/accessDenied.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/MemberController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/trainingAanmaken.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/instructor/beheer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/instructor/lesson.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/member.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/member/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InstructorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/bezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/bezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/adminHomepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/trainingen.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/trainingen.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/instructor/instructorHomepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/trainingen.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/instructor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/instructor.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,6 +162,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -204,7 +200,10 @@
       <workItem from="1576617260544" duration="2882000" />
       <workItem from="1576673222531" duration="4640000" />
       <workItem from="1578307781682" duration="12780000" />
-      <workItem from="1578558661390" duration="17241000" />
+      <workItem from="1578558661390" duration="17469000" />
+      <workItem from="1578641930190" duration="17295000" />
+      <workItem from="1578665508369" duration="786000" />
+      <workItem from="1578666794614" duration="245000" />
     </task>
     <servers />
   </component>

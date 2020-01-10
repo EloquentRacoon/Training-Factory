@@ -1,28 +1,36 @@
 {% extends "admin.html.twig" %}
 {% block content %}
-    <div class="m-2">
+    <div class="m-2 col-12">
         <h1 class="text-center">Trainingen</h1>
-        <table class="table m-5">
+        <table class="table mt-5 mb-5">
             <thead>
             <tr>
                 <th>Training</th>
                 <th>Descriptie</th>
                 <th>duratie <br> uur:minuten</th>
                 <th>kosten</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             {% for training in trainingen %}
                 <tr>
-                    <th><a href="" class="text-dark"><u>{{ training.naam }}</u></a></th>
+                    <th><a href="{{ path('app_admin_training_edit', {id: training.id}) }}" class="text-dark"><u>{{ training.naam }}</u></a></th>
                     <td>{{ training.desciption }}</td>
                     <td>{{ training.duration|date("H:i") }}</td>
                     <td>€ {{ training.costs }}</td>
+                    <td><a href="{{ path('app_admin_training_delete',{id: training.id}) }}"><button class="btn-primary btn">verwijderen</button></a></td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
+    <div class="col-1">
+        <div class="row justify-content-center">
+            <a href="{{ path('app_admin_training_aanmaken') }}" class="align-self-center"><button class="btn btn-primary align-self-center mt-5 p-3">Voeg training toe</button></a>
+        </div>
+    </div>
+
 
 
 {% endblock %}

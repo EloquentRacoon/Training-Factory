@@ -1,0 +1,43 @@
+{% extends "instructor.html.twig" %}
+{% block content %}
+    <div class="m-2 col-12">
+        <h1 class="text-center">lessen</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Activiteit</th>
+                <th>Descriptie</th>
+                <th>Datum</th>
+                <th>Tijdstip</th>
+                <th>Duratie</th>
+                <th>Locatie</th>
+                <th>Aantal Inschrijvingen</th>
+                <th>Instructeur</th>
+                <th>kosten</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for lesson in lessons %}
+                <tr>
+                    <th>{{ lesson.training.naam }}</th>
+                    <td>{{ lesson.training.desciption }}</td>
+                    <td>{{ lesson.date|date("m-d-Y") }}</td>
+                    <td>{{ lesson.time|date("H:i") }}</td>
+                    <td>{{ lesson.training.duration|date("H:i") }}</td>
+                    <td>{{ lesson.location }}</td>
+                    <td>{{ lesson.maxPersons }}</td>
+                    <td>{{ lesson.person.firstname }}</td>
+                    <td>{{ lesson.training.costs }}</td>
+                    <td><a href="{{ path('app_instructor_lesson_delete' ,{id:lesson.id}) }}"><button class="btn btn-primary"></button></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="{{ path('app_instructor_les_toevoegen') }}">
+            <button class="btn btn-primary">toevoegen</button>
+        </a>
+    </div>
+{% endblock %}

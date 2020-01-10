@@ -1,12 +1,10 @@
-{% extends "bezoeker.html.twig" %}
+{% extends "instructor.html.twig" %}
 {% block content %}
     <div class="col m-5">
         {{ form_start(registrationForm) }}
-        {{ form_widget(registrationForm) }}
-
-
+        {{ form_widget(registrationForm, {'type':'number'}) }}
         <button class="btn btn-lg btn-primary btn-block mb-3 mt-5" type="submit">
-            Register
+            Opslaan
         </button>
         {{ form_end(registrationForm) }}
     </div>

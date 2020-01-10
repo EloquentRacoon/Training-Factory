@@ -36,6 +36,17 @@ class PersonRepository extends ServiceEntityRepository implements PasswordUpgrad
         $this->_em->flush();
     }
 
+    public function findAllInstructors()
+    {
+
+       $query = $this->createQueryBuilder('u');
+       $query->select('u')
+           ->where('u.roles like :roles')
+           ->setParameter('roles','%"ROLE_INSTRUCTOR"%');
+       return $query->getQuery()->getResult();
+
+    }
+
     // /**
     //  * @return Person[] Returns an array of Person objects
     //  */
