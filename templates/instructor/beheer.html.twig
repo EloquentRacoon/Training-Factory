@@ -20,7 +20,7 @@
             <tbody>
             {% for lesson in lessons %}
                 <tr>
-                    <th>{{ lesson.training.naam }}</th>
+                    <th><a href="{{ path('app_instructor_lesson_edit', {id: lesson.id}) }}"  class="text-dark"><u>{{ lesson.training.naam }}</u></a></th>
                     <td>{{ lesson.training.desciption }}</td>
                     <td>{{ lesson.date|date("m-d-Y") }}</td>
                     <td>{{ lesson.time|date("H:i") }}</td>

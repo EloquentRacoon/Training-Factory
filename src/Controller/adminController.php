@@ -28,7 +28,7 @@ class adminController extends AbstractController
     /**
      * @Route("admin/trainingen", name="app_admin_trainingen")
      */
-    public function traingingAction(TrainingRepository $trainingRepository, LessonRepository $lessonRepository)
+    public function traingingAction(TrainingRepository $trainingRepository)
     {
         return $this->render("admin/trainingen.html.twig", [
             'trainingen' => $trainingRepository->findAll(),

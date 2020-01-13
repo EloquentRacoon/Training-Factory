@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f03da9e-b73b-49e1-9be5-a61019e326f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/MemberController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/trainingAanmaken.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/instructor/beheer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/instructor/lesson.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/member.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/member/homepage.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/member/gegevens.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/InstructorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MemberController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LessonRegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonRegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PersonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/trainingen.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/trainingen.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/instructor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/instructor.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/instructor/beheer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/instructor/beheer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/member.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +199,7 @@
       <workItem from="1578558661390" duration="17469000" />
       <workItem from="1578641930190" duration="17295000" />
       <workItem from="1578665508369" duration="786000" />
-      <workItem from="1578666794614" duration="245000" />
+      <workItem from="1578666794614" duration="10923000" />
     </task>
     <servers />
   </component>

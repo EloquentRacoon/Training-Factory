@@ -23,9 +23,9 @@ class UserRegistrationFormType extends AbstractType
                     'label' => 'Wachtwoord'
             ))
             ->add('emailaddress', null, ['label' => 'Email adress' ])
-            ->add('firstname', null, ['label' => 'Voornaam' ])
-            ->add('preprovision', null, ['label' => 'Tussen voegsel' ])
-            ->add('lastname', null, ['label' => 'Achternaam' ])
+            ->add('firstname', null, ['label' => 'Voornaam', 'attr' => array( 'class' => 'text-capitalize')])
+            ->add('preprovision', null, ['label' => 'Tussen voegsel'])
+            ->add('lastname', null, ['label' => 'Achternaam',  'attr' => array( 'class' => 'text-capitalize')])
             ->add('dateofbirth', null , ['years' => range($date, $pastDate ), 'format' => 'dd MMMM yyyy', 'label' => 'Geboorte datum'])
             ->add('gender', ChoiceType::class, ['choices' => [
                 'Man' => 'Man',
