@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserRegistrationFormType extends AbstractType
+class UserAccountFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -17,11 +17,9 @@ class UserRegistrationFormType extends AbstractType
         $pastDate= date('Y', strtotime('-80 years'));
 
         $builder
-            ->add('username')
-            ->add('plainPassword', PasswordType::class , array(
-                    'mapped' => false,
-                    'label' => 'Wachtwoord'
-            ))
+            ->add('password', PasswordType::class, array(
+                'mapped' => false,
+                'label' => 'Huidig wachtwoord'))
             ->add('emailaddress', null, ['label' => 'Email adress' ])
             ->add('firstname', null, ['label' => 'Voornaam', 'attr' => ['class' => 'text-capitalize']])
             ->add('preprovision', null, ['label' => 'Tussen voegsel'])
@@ -33,9 +31,9 @@ class UserRegistrationFormType extends AbstractType
                 'Anders' => 'Anders'],
                 'label' => 'Geslacht'])
 
-//            ->add('street')
-//            ->add('postal_code')
-//            ->add('place')
+//          ->add('street')
+//          ->add('postal_code')
+//          ->add('place')
         ;
     }
 

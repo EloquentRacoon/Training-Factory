@@ -53,7 +53,7 @@ class InstructorController extends AbstractController
             $training = $form->getData();
             $em->persist($training);
             $em->flush();
-            $this->addFlash('success', 'training created');
+            $this->addFlash('success', 'Les gemaakt!');
 
             return $this->redirectToRoute('app_instructor_les_beheer');
         }
@@ -77,7 +77,7 @@ class InstructorController extends AbstractController
             $training = $form->getData();
             $em->persist($training);
             $em->flush();
-            $this->addFlash('success', 'lesson updated');
+            $this->addFlash('success', 'Les aangepast!');
 
             return $this->redirectToRoute('app_instructor_les_beheer');
         }
@@ -103,7 +103,7 @@ class InstructorController extends AbstractController
         }
         $em->remove($lesson);
         $em->flush();
-        $this->addFlash("success", "les verwijderd");
+        $this->addFlash("success", "Les verwijderd");
 
         return $this->redirectToRoute('app_instructor_les_beheer');
     }

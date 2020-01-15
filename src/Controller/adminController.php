@@ -49,7 +49,7 @@ class adminController extends AbstractController
             $training = $form->getData();
             $em->persist($training);
             $em->flush();
-            $this->addFlash('success', 'training created');
+            $this->addFlash('success', 'Training aangemaakt');
 
             return $this->redirectToRoute('app_admin_trainingen');
         }
@@ -73,7 +73,7 @@ class adminController extends AbstractController
             $training = $form->getData();
             $em->persist($training);
             $em->flush();
-            $this->addFlash('success', 'training created');
+            $this->addFlash('success', 'Training aangepast');
 
             return $this->redirectToRoute('app_admin_trainingen');
         }

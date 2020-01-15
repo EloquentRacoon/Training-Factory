@@ -1,16 +1,16 @@
 {%  extends "base.html.twig" %}
 {% block navContent %}
     <li class="nav-item dRed">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">Home</a>
+        <a class="nav-link dRed display-5" href="{{ path('app_member_homepage') }}">Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">inschrijving lessen</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link dRed display-5" href="{#  {{ path('') }}#}">overzicht lessen</a>
+        <a class="nav-link dRed display-5" href="  {{ path('app_member_lessen') }}">overzicht lessen</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link dRed display-5" href="  {{ path('app_member_gegevens')}}">gegevens aanpassen</a>
+        <a class="nav-link dRed display-5" href="  {{ path('app_member_gegevens')}}">gegevens</a>
     </li>
     {% if app.user %}
         <li class="nav-item">
