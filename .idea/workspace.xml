@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f03da9e-b73b-49e1-9be5-a61019e326f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/member/gegevensAanpassen.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/member/lessen.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/instructor/agenda.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/member/persoonlessen.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/InstructorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MemberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/bezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/bezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Person.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/aanmelden.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/instructor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/instructor.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/member.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/member/gegevens.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member/gegevens.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,6 +199,7 @@
       <workItem from="1578665508369" duration="786000" />
       <workItem from="1578666794614" duration="10991000" />
       <workItem from="1579074420899" duration="12479000" />
+      <workItem from="1579248160922" duration="10474000" />
     </task>
     <servers />
   </component>

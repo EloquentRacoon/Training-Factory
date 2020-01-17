@@ -4,10 +4,13 @@
 namespace App\Controller;
 
 
+use App\Entity\Lesson;
 use App\Entity\Person;
+use App\Entity\Registration;
 use App\Form\UserAccountFormType;
 use App\Repository\LessonRepository;
 use App\Repository\PersonRepository;
+use App\Repository\RegistrationRepository;
 use App\Repository\TrainingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -33,7 +36,7 @@ class MemberController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository(Person::class)->find($this->getUser()->getId());
 
-        return $this->render("member/gegevens.html.twig",[
+        return $this->render("member/gegevens.html.twig", [
             'person' => $personRepository->find($user)
         ]);
     }
@@ -41,20 +44,18 @@ class MemberController extends AbstractController
     /**
      * @Route("member/gegevens/edit/{password}", name="app_member_gegevens_aanpassen")
      */
-    public function gegevensEditAction(Request $request, $password , UserPasswordEncoderInterface $passwordEncoder)
+    public function gegevensEditAction(Request $request, $password, UserPasswordEncoderInterface $passwordEncoder)
     {
-
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository(Person::class)->find($this->getUser()->getId());
 
-        if ($password == "true")
-        {
+        if ($password == "true") {
             $form = $this->createFormBuilder()
                 ->add('password', PasswordType::class, array(
                     'mapped' => false,
                     'label' => 'Huidig wachtwoord'
                 ))
-                ->add('plainPassword', PasswordType::class , array(
+                ->add('plainPassword', PasswordType::class, array(
                     'mapped' => false,
                     'label' => 'Nieuw wachtwoord'
                 ))
@@ -62,19 +63,15 @@ class MemberController extends AbstractController
 //                ->add()
 //                ->add()
                 ->getForm();
-
-
-            } else {
+        } else {
             $form = $this->createForm(UserAccountFormType::class, $user);
         }
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            if ($passwordEncoder->isPasswordValid($this->getUser(), $form->get('password')->getData()))
-            {
-                if ($password == "true")
-                {
+            if ($passwordEncoder->isPasswordValid($this->getUser(), $form->get('password')->getData())) {
+                if ($password == "true") {
                     $user->setPassword($passwordEncoder->encodePassword(
                         $user,
                         $form['plainPassword']->getData()
@@ -88,8 +85,7 @@ class MemberController extends AbstractController
                 $this->addFlash("success", "Aanpassing is gelukt!");
                 return $this->redirectToRoute('app_member_gegevens');
 
-            }
-            else {
+            } else {
                 $this->addFlash("danger", "Wachtwoord is incorrect");
             }
         }
@@ -99,21 +95,70 @@ class MemberController extends AbstractController
     }
 
     /**
-     * @Route("member/les-overzicht", name="app_member_lessen")
+     * @Route("member/les-inschrijving", name="app_member_lessen")
      */
     public function lessenAction(TrainingRepository $trainingRepository, LessonRepository $lessonRepository)
     {
-        return $this->render("member/lessen.html.twig",[
+        return $this->render("member/lessen.html.twig", [
             'trainingen' => $trainingRepository->findAll(),
             'lessons' => $lessonRepository->findAll()
         ]);
     }
 
     /**
-     * @Route("member/lessen/aanmelden", name="app_member_les_aanmelden")
+     * @Route("member/lessen/aanmelden/{id}", name="app_member_les_aanmelden")
      */
-    public function lesAanmeldingAction(TrainingRepository $trainingRepository, LessonRepository $lessonRepository)
+    public function lesAanmeldingAction($id, PersonRepository $personRepository, LessonRepository $lessonRepository)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(Person::class)->find($this->getUser()->getId());
+        $lesson = $em->getRepository(Lesson::class)->find($id);
+
+        $registrations = $lesson->getRegistration();
+
+        foreach ($registrations as $registration) {
+            if ($registration->getPerson()->getId() == $this->getUser()->getId()) {
+                $this->addFlash('danger', 'U heeft zich al aangemeld voor deze les');
+                return $this->redirectToRoute('app_member_lessen');
+            }
+        }
+
+        $registration = new Registration();
+        $registration->setPerson($user);
+        $registration->setLesson($lesson);
+
+        $em->persist($registration);
+        $em->flush();
+
+        $this->addFlash('success', 'Registratie voltooid');
+
+        return $this->redirectToRoute('app_member_persoon_lessen');
+
+    }
+
+    /**
+     * @Route("member/trainingen", name="app_member_persoon_lessen")
+     */
+    public function persoonLessenAction(RegistrationRepository $registrationRepository)
+    {
+        return $this->render("member/persoonlessen.html.twig", [
+            'registrations' => $registrationRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/member/training-delete/{id}", name="app_member_registratie_delete")
+     */
+    public function lessonDeleteAction($id)
     {
 
+        $em = $this->getDoctrine()->getManager();
+        $registration = $em->getRepository(Registration::class)->find($id);
+
+        $em->remove($registration);
+        $em->flush();
+        $this->addFlash("success", "Registratie verwijderd");
+
+        return $this->redirectToRoute('app_member_persoon_lessen');
     }
 }

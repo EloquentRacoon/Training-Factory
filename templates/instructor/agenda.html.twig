@@ -1,0 +1,33 @@
+{% extends 'instructor.html.twig' %}
+{% block content %}
+<div class="m-2 col-8">
+    <h1 class="text-center">lessen</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Activiteit</th>
+            <th>Datum</th>
+            <th>Tijdstip</th>
+            <th>Duratie</th>
+            <th>Locatie</th>
+            <th>Aantal Inschrijvingen</th>
+            <th>Instructeur</th>
+{#            <th></th>#}
+        </tr>
+        </thead>
+        <tbody>
+        {% for lesson in lessons %}
+            <tr>
+                <th>{{ lesson.training.naam}}</th>
+                <td>{{ lesson.date|date("m-d-Y") }}</td>
+                <td>{{ lesson.time|date("H:i") }}</td>
+                <td>{{ lesson.training.duration|date("H:i") }}</td>
+                <td>{{ lesson.location }}</td>
+                <td>{{ lesson.maxPersons }}</td>
+                <td>{{ lesson.person.firstname }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

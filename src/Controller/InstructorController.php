@@ -5,9 +5,11 @@ namespace App\Controller;
 
 
 use App\Entity\Lesson;
+use App\Entity\Person;
 use App\Entity\Registration;
 use App\Form\LessonRegistrationFormType;
 use App\Repository\LessonRepository;
+use App\Repository\RegistrationRepository;
 use App\Repository\TrainingRepository;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -87,8 +89,8 @@ class InstructorController extends AbstractController
     }
 
     /**
-     * @Route("/instructor/lesson-delete/{id}", name="app_instructor_lesson_delete")
-     */
+ * @Route("/instructor/lesson-delete/{id}", name="app_instructor_lesson_delete")
+ */
     public function lessonDeleteAction($id)
     {
         $lessonId = $id;
@@ -106,6 +108,20 @@ class InstructorController extends AbstractController
         $this->addFlash("success", "Les verwijderd");
 
         return $this->redirectToRoute('app_instructor_les_beheer');
+    }
+    /**
+     * @Route("/instructor/lessen",name="app_instructor_lessen")
+     */
+    public function lessenAction(RegistrationRepository $registrationRepository)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $instructor = $em->getRepository(Person::class)->find($this->getUser()->getId());
+        $lessons = $instructor->getLessons();
+
+        return $this->render("instructor/agenda.html.twig", [
+            'lessons'=> $lessons
+        ]);
     }
 }
 

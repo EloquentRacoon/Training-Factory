@@ -1,0 +1,38 @@
+{% extends 'member.html.twig' %}
+{%  block content %}
+    <div class="m-2 col-12">
+    <h1 class="text-center">lessen</h1>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Activiteit</th>
+        <th>Descriptie</th>
+        <th>Datum</th>
+        <th>Tijdstip</th>
+        <th>Duratie</th>
+        <th>Locatie</th>
+        <th>Aantal Inschrijvingen</th>
+        <th>Instructeur</th>
+        <th>kosten</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for registration in registrations %}
+        <tr>
+            <th>{{ registration.lesson.training.naam }}</th>
+            <td>{{ registration.lesson.training.desciption }}</td>
+            <td>{{ registration.lesson.date|date("m-d-Y") }}</td>
+            <td>{{ registration.lesson.time|date("H:i") }}</td>
+            <td>{{ registration.lesson.training.duration|date("H:i") }}</td>
+            <td>{{ registration.lesson.location }}</td>
+            <td>{{ registration.lesson.maxPersons }}</td>
+            <td>{{ registration.lesson.person.firstname }}</td>
+            <td>{{ registration.lesson.training.costs }}</td>
+            <td><a href="{{ path('app_member_registratie_delete' ,{id: registration.id}) }}"><button class="btn btn-primary">Afmelden</button></a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+{% endblock %}
