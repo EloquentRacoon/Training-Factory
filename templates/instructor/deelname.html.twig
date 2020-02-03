@@ -1,0 +1,26 @@
+{% extends 'instructor.html.twig' %}
+{% block content %}
+    <div class="m-2 col-8">
+        <h1 class="text-center">{{ lesson.training.naam }}</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Geslacht</th>
+                <th>Email adress</th>
+                <th>Betaling</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for deelnemer in deelnemers %}
+                <tr>
+                    <td>{{ deelnemer.person.firstname }} {{ deelnemer.person.preprovision }} {{ deelnemer.person.lastname }}</td>
+                    <td>{{ deelnemer.person.gender }}</td>
+                    <td>{{ deelnemer.person.emailaddress }}</td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

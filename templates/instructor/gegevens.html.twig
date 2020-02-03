@@ -1,0 +1,44 @@
+{% extends 'instructor.html.twig' %}
+{% block content %}
+    <div class="col-4 m-5">
+        <table class="table table-borderless mt-5">
+            <tbody>
+            <tr class="table-active">
+                <th>Email</th>
+                <td>{{ person.emailaddress }}</td>
+            </tr>
+            <tr class="table-active">
+                <th>Password</th>
+                <td><a href="{{ path('app_instructor_gegevens_aanpassen', {password: 'true'}) }}"><button class="btn btn-dark">Nieuw wachtwoord</button></a></td>
+            </tr>
+            <tr class="table-active">
+                <th>Volledige naam</th>
+                <td>{{ person.firstname }}
+                    {{ person.preprovision }}
+                    {{ person.lastname }}</td>
+            </tr>
+            <tr class="table-active">
+                <th>Geboorte Datum</th>
+                <td>{{ person.dateofbirth|date('d-M-y') }}</td>
+            </tr>
+            <tr class="table-active">
+                <th>Geslacht</th>
+                <td>{{ person.gender }}</td>
+            </tr>
+            <tr class="table-active">
+                <th>Straatnaam</th>
+                <td>{{ person.street }}</td>
+            </tr>
+            <tr class="table-active">
+                <th>Postcode</th>
+                <td>{{ person.postalCode }}</td>
+            </tr>
+            <tr class="table-active">
+                <th>Plaats</th>
+                <td>{{ person.place }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{{ path('app_instructor_gegevens_aanpassen', {password: 'false'})}}"><button class="btn btn-primary">Pas Aan</button></a>
+    </div>
+{% endblock %}

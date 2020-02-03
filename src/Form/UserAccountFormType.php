@@ -30,10 +30,10 @@ class UserAccountFormType extends AbstractType
                 'Vrouw' => 'Vrouw',
                 'Anders' => 'Anders'],
                 'label' => 'Geslacht'])
+            ->add('street',null, ['label' => 'Straatnaam', 'attr' => ['class' => 'text-capitalize']])
+            ->add('postal_code', null, ['label' => 'Postcode'])
+            ->add('place', null, ['label' => 'Plaats'])
 
-//          ->add('street')
-//          ->add('postal_code')
-//          ->add('place')
         ;
     }
 

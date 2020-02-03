@@ -8,11 +8,14 @@ use App\Entity\Lesson;
 use App\Entity\Person;
 use App\Entity\Registration;
 use App\Form\LessonRegistrationFormType;
+use App\Form\UserAccountFormType;
 use App\Repository\LessonRepository;
+use App\Repository\PersonRepository;
 use App\Repository\RegistrationRepository;
 use App\Repository\TrainingRepository;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -93,9 +96,8 @@ class InstructorController extends AbstractController
  */
     public function lessonDeleteAction($id)
     {
-        $lessonId = $id;
         $em = $this->getDoctrine()->getManager();
-        $lesson = $em->getRepository(Lesson::class)->find($lessonId);
+        $lesson = $em->getRepository(Lesson::class)->find($id);
 
         $registrations = $lesson->getRegistration();
         foreach($registrations as $registration)
@@ -110,7 +112,7 @@ class InstructorController extends AbstractController
         return $this->redirectToRoute('app_instructor_les_beheer');
     }
     /**
-     * @Route("/instructor/lessen",name="app_instructor_lessen")
+     * @Route("/instructor/agenda",name="app_instructor_lessen")
      */
     public function lessenAction(RegistrationRepository $registrationRepository)
     {
@@ -123,6 +125,85 @@ class InstructorController extends AbstractController
             'lessons'=> $lessons
         ]);
     }
+    /**
+     * @Route("instructor/gegevens", name="app_instructor_gegevens")
+     */
+    public function gegevensAction(PersonRepository $personRepository)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(Person::class)->find($this->getUser()->getId());
+
+        return $this->render("instructor/gegevens.html.twig", [
+            'person' => $personRepository->find($user)
+        ]);
+    }
+    /**
+     * @Route("instructor/gegevens/edit/{password}", name="app_instructor_gegevens_aanpassen")
+     */
+    public function gegevensEditAction(Request $request, $password, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(Person::class)->find($this->getUser()->getId());
+
+        if ($password == "true") {
+            $form = $this->createFormBuilder()
+                ->add('password', PasswordType::class, array(
+                    'mapped' => false,
+                    'label' => 'Huidig wachtwoord'
+                ))
+                ->add('plainPassword', PasswordType::class, array(
+                    'mapped' => false,
+                    'label' => 'Nieuw wachtwoord'
+                ))
+//                ->add()
+//                ->add()
+//                ->add()
+                ->getForm();
+        } else {
+            $form = $this->createForm(UserAccountFormType::class, $user);
+        }
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            if ($passwordEncoder->isPasswordValid($this->getUser(), $form->get('password')->getData())) {
+                if ($password == "true") {
+                    $user->setPassword($passwordEncoder->encodePassword(
+                        $user,
+                        $form['plainPassword']->getData()
+                    ));
+                } else {
+                    $user = $form->getData();
+                }
+
+                $em->persist($user);
+                $em->flush();
+                $this->addFlash("success", "Aanpassing is gelukt!");
+                return $this->redirectToRoute('app_instructor_gegevens');
+
+            } else {
+                $this->addFlash("danger", "Wachtwoord is incorrect");
+            }
+        }
+        return $this->render('instructor/gegevensAanpassen.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
+    }
+    /**
+    * @Route("/instructor/deelname/{id}", name="app_instructor_deelnamelijst")
+    */
+    public function deelnameAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $les = $em->getRepository(Lesson::class)->find($id);
+        $deelnemer = $les->getRegistration();
+
+        return $this->render("instructor/deelname.html.twig", [
+            'lesson'=> $les,
+            'deelnemers' => $deelnemer
+        ]);
+
+    }
+
 }
-
-

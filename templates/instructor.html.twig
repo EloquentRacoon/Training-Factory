@@ -4,10 +4,13 @@
         <a class="nav-link dRed display-5" href="  {{ path('app_instructor_lessen') }}">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link dRed display-5" href="  {{ path('app_instructor_lessen') }}">plannen lessen</a>
+        <a class="nav-link dRed display-5" href="  {{ path('app_instructor_lessen') }}">Plannen lessen</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link dRed display-5" href=" {{ path('app_instructor_les_beheer') }}">lessen beheer</a>
+        <a class="nav-link dRed display-5" href=" {{ path('app_instructor_les_beheer') }}">Lessen beheer</a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link dRed display-5" href=" {{ path('app_instructor_gegevens') }}">Gegevens</a>
     </li>
     {% if app.user %}
         <li class="nav-item">
@@ -15,7 +18,7 @@
         </li>
     {% else %}
         <li class="nav-item">
-            <a class="nav-link dRed display-5" href="{{ path('app_login') }}">login</a>
+            <a class="nav-link dRed display-5" href="{{ path('app_login') }}">Login</a>
         </li>
     {% endif %}
 {% endblock %}
